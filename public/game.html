@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title >Agar Galaxy!</title>
+	<link rel="shortcut icon" type="image/png" href="./images/favicon.png"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="./stylesheets/style.css">
+</head>
+<body>
+	<div id="GameContainer">
+		<div id="game-field-body" class="col-sm-12">
+			<canvas class="c" id="the-canvas" style="background-color: black;"></canvas>
+			<div id="score-encapsulator" class="hiddenOnStart" hidden>
+				<div>Score: <span class="player-score"></span></div>
+			</div>
+			<div id="leader-board-encapsulator" class="hiddenOnStart" hidden>
+				<div id="leader-board">
+					<h3 class="text-center">Leaders</h3>
+					<hr>
+					<ol class="leader-board">
+						<li class="leaderboard-player-Config"></li>
+					</ol>
+					<hr>
+			</div>
+			</div>
+			<div id="game-message-encapsulator">
+				<div id="game-message">{{gameMessage}}</div>
+			</div>
+		</div>
+	</div>
+	<div id="loginModal" class="modal fade" role="dialog">	
+	
+<div class="modal-dialog modal-sm -fm -lsm - tsf">
+	<script src="javascripts/splash.js"></script>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title text-center">Agar Galaxy</h2>
+				</div>
+				<div class="modal-body">
+					<form class="name-form">
+						<div class="text-center error-message"></div>
+						<button type="submit" class="btn play-button play-guest play-normal">Play</button>
+						<input id="name-input" class="text-input text-center form-control control-input" type="text" name="name-input" placeholder="Enter your name here" required>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="spawnModal" class="modal fade body" role="dialog">
+		<div class="modal-dialog modal-sm">
+
+			<div class="modal-content String">
+				<div class="modal-header Link">
+					<h2 class="modal-title text-center">Agar Galaxy</h2>
+					</div>
+				<div class="modal-body">
+					<h3 class="text-center">Hello, <span class="player-name"></span>!</h3>
+					<div class="play-btn-wrapper">
+						<button id="play-solo-btn" type="button" class="btn play-button start-game">Play Solo!</button>
+						<div class="GlobalScore highScore" id = "highScore">High Score: No Active Players <span class="player-scores"></span></div>
+						<div class="GlobalScore playersNum">Players in Lobby:  <span class="player-scores"></span></div>
+						<div class="GlobalScore playerTop">Top Player: No Active Players<span class="player-scores"></span></div >
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div id="instructions">
+						<label id="how-to-play">How to play:</label>
+						<ul>
+							<li>Move mouse to Live</li>
+							<li>Eat orbs? grow Fat? Fatter? Big</li>
+							<li>Very Fat? Oops you are Slow</li>
+							<li>Objective: Eat other Players for Dinner</li>
+							<li>Press Space to become Thin and Faster</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="javascripts/ui.js"></script>
+	<script src="javascripts/canvas.js"></script>
+	<script src="javascripts/socketNeeds.js"></script>
+</body>
+</html>
