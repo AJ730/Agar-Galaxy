@@ -1,5 +1,5 @@
 //ws = io2;
-let socket = io.connect('192.168.2.5:9090');
+let socket = io.connect('localhost:3000');
 //this is the same as let socket2 = ws.on("localhost:9000") as we pass the ws to io;
 var dead = false; 
 
