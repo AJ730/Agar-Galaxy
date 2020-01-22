@@ -7,7 +7,7 @@ const path = require('path')
 app.use(express.static(path.join(__dirname + '/public')));
 
 const socketio = require('socket.io');
-const expressServer = app.listen(9090);
+const expressServer = app.listen(process.env.PORT || 3000);
 const io = socketio(expressServer);
 const io2 = new websocket.Server({server});
 console.log("server started on port 9090");
